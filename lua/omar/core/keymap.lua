@@ -36,9 +36,11 @@ keymap.set("n", "TT", ":tabp<CR>") -- prev tab
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>")
 
 
--- Telescope file explorer
-local telescope = require('telescope.builtin');
-vim.keymap.set('n', 'fs', telescope.find_files, {});
-vim.keymap.set('n', 'ts', function()
-     telescope.grep_string({ search = vim.fn.input("Search > ") });
-end);
+
+-- telescope
+keymap.set("n", "fs", "<cmd>Telescope find_files<cr>")
+keymap.set("n", "ts", "<cmd>Telescope grep_string<cr>")
+
+-- nvim tree
+keymap.set("n", "<leader>fe", ":NvimTreeToggle<CR>")
+

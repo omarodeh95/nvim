@@ -42,12 +42,17 @@ return packer.startup(function(use)
   -- lua functions that many other functions use
   use("nvim-lua/plenary.nvim")
 
-  -- file explorer
-  use {
-                'nvim-telescope/telescope.nvim', tag = '0.1.8',
-                -- or                            , branch = '0.1.x',
-                requires = { {'nvim-lua/plenary.nvim'} }
-        }
+  -- fuzzy finding w/ telescope
+  use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
+  use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
+  -- file browser
+  use("nvim-tree/nvim-tree.lua")
+
+  -- icons
+  use("kyazdani42/nvim-web-devicons")
+
+  -- statusline
+  use("nvim-lualine/lualine.nvim")
 
   if packer_bootstrap then
     require('packer').sync()
