@@ -40,3 +40,6 @@ opt.splitright = true
 opt.splitbelow = true
 
 opt.iskeyword:append("-")
+
+opt.wildmenu = false
+opt.autoindent = true

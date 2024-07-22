@@ -31,6 +31,15 @@ keymap.set("n", "to", ":tabnew<CR>") -- new tab
 keymap.set("n", "tx", ":tabclose<CR>") -- close tab
 keymap.set("n", "tt", ":tabn<CR>") -- next tab
 keymap.set("n", "TT", ":tabp<CR>") -- prev tab
+local function map_tabs()
+  for i = 1, 9 do
+    local key = 't' .. i
+    local command = ':tabn ' .. i .. '<CR>'
+    vim.api.nvim_set_keymap('n', key, command, { noremap = true, silent = true })
+  end
+end
+map_tabs()
+
 
 -- Toggle maximize window 
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>")
@@ -42,5 +51,14 @@ keymap.set("n", "fs", "<cmd>Telescope find_files<cr>")
 keymap.set("n", "ts", "<cmd>Telescope grep_string<cr>")
 
 -- nvim tree
-keymap.set("n", "<leader>fe", ":NvimTreeToggle<CR>")
+keymap.set("n", "ff", ":NvimTreeToggle<CR>")
 
+
+
+-- Move lines up and down in normal, insert and visual mode
+keymap.set('n', '<C-J>', ':m .+1<CR>==', { noremap = true, silent = true })
+keymap.set('n', '<C-K>', ':m .-2<CR>==', { noremap = true, silent = true })
+keymap.set('i', '<C-J>', '<Esc>:m .+1<CR>==gi', { noremap = true, silent = true })
+keymap.set('i', '<C-K>', '<Esc>:m .-2<CR>==gi', { noremap = true, silent = true })
+keymap.set('v', '<C-J>', ':m \'>+1<CR>gv=gv', { noremap = true, silent = true })
+keymap.set('v', '<C-K>', ':m \'<-2<CR>gv=gv', { noremap = true, silent = true })
