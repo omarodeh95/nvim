@@ -36,6 +36,9 @@ return packer.startup(function(use)
   -- Surrounding -- ysw" -> add double quote to the motion, csw) -> change the surrounding of motion, ds) delete the double quote
   use("tpope/vim-surround")
 
+  -- Git plugin
+  use("tpope/vim-fugitive")
+
   -- Commenting with gc
   use("numToStr/Comment.nvim")
 

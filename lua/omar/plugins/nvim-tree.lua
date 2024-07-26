@@ -28,6 +28,9 @@ end
 
 nvimtree.setup({
   on_attach = my_on_attach,
+  filters = {
+    git_ignored = false, -- This line hides files ignored by git
+  },
   renderer = {
     icons = {
       glyphs = {

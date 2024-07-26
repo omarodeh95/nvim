@@ -27,8 +27,8 @@ keymap.set("n", "<leader>se", "<C-w>=") -- make split equal width
 keymap.set("n", "<leader>sx", ":close<CR>") -- close current split windo
 
 -- Tabs navigation
-keymap.set("n", "to", ":tabnew<CR>") -- new tab
-keymap.set("n", "tx", ":tabclose<CR>") -- close tab
+keymap.set("n", "tn", ":tabnew<CR>") -- new tab
+keymap.set("n", "tc", ":tabclose<CR>") -- close tab
 keymap.set("n", "tt", ":tabn<CR>") -- next tab
 keymap.set("n", "TT", ":tabp<CR>") -- prev tab
 local function map_tabs()
