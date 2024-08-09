@@ -57,6 +57,12 @@ return packer.startup(function(use)
   -- statusline
   use("nvim-lualine/lualine.nvim")
 
+  -- treesitter for syntax highlihting
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
+  }
+
   -- lsp
   use {
     'VonHeikemen/lsp-zero.nvim',
