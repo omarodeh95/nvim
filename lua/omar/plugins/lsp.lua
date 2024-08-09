@@ -17,12 +17,10 @@ local capabilities = vim.tbl_deep_extend(
 -- Setup Mason and Mason-LSPConfig
 require("mason").setup()
 require("mason-lspconfig").setup({
-    ensure_installed = {
-        "lua_ls",
-        "rust_analyzer",
-        "ruby_lsp",
-        "rubocop"
-    },
+    -- ensure_installed = {
+    --     "ruby_lsp",
+    --     "rubocop"
+    -- },
     handlers = {
         function(server_name) -- Default handler
             require("lspconfig")[server_name].setup {
